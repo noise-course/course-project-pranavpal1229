@@ -1,0 +1,35 @@
+Project Contributors: Pranav Palaniappan and Hudson Carpenter
+
+Project Title 
+AI-Assisted Imputation for Incomplete Network Traffic Data 
+Project Summary 
+In network traffic analysis, packet capture (PCAP) files are the foundation for studying 
+communication patterns, performance metrics, and anomaly detection. We often see these 
+packet captures holding incomplete or missing data points due to packet loss or incomplete 
+logging, which can distort feature extraction and model accuracy. This project investigates how 
+artificial intelligence can reconstruct missing values within PCAP-derived datasets compared to 
+traditional row-deletion methods. By exploring AI-assisted imputation, we aim to retain more 
+information from partially captured sessions and improve downstream analytics accuracy. In 
+essence, can we use AI to find the patterns within the data before using the data to predict 
+future patterns.  
+Data 
+The dataset will be generated from PCAP files collected during controlled network sessions of a 
+user interacting with a target software application (e.g., web app or streaming platform). 
+Features such as packet size, inter-arrival time, source/destination IP, and protocol type will be 
+extracted using tools like Wireshark. Missingness will be introduced to simulate packet loss and 
+incomplete capture conditions. We hope that the data is incomplete when we gather it but will 
+need to make it intentionally incomplete if this does not work.  
+Machine Learning 
+We will test multiple imputation strategies: 
+● AI-based methods: k-Nearest Neighbors (KNN) imputation, linear/logistic regression.  
+● Baseline: Simple deletion (listwise removal) and mean/median substitution. 
+After imputation, standard ML classifiers (e.g., Random Forest, Gradient Boosted Trees) will be 
+trained on both versions of the dataset to assess how imputation affects predictive performance. 
+Evaluation 
+Model performance will be compared using metrics such as accuracy, F1-score, and mean 
+squared error on held-out validation data. 
+Learning Objective 
+Often we simply take out outliers or incomplete data, but this leads to us missing out on 
+potential data points that have important features in other columns. Being able to use AI to 
+complete data will allow us to see if we can harness a stronger dataset to predict network 
+capabilities/features better. 
